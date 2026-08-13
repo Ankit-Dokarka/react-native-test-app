@@ -1,0 +1,28 @@
+Here is a perfect homework assignment that combines everything we've learned so far (Layout, Flexbox, State, and Buttons) without requiring any new concepts.
+
+Homework: The "Follow/Unfollow" Profile Card
+The Scenario:
+You are building a mini social media profile screen.
+
+The Requirements:
+
+Main Container: A full-screen <View> with a grayish background color (#e0e0e0), centering its contents vertically and horizontally.
+The Card: A white <View> inside the main container that takes up about 80% of the screen width (width: '80%'), has some padding, and rounded corners (borderRadius: 15).
+Card Content:
+A <Text> for a user's name (e.g., "John Doe") - make it bold and large.
+A <Text> for a bio (e.g., "React Native Developer in training") - make it smaller and gray.
+The Interactive Button:
+Use useState to create a boolean state called isFollowing (set it to false by default).
+Create a <TouchableOpacity> button below the bio.
+The Logic: When pressed, it should toggle isFollowing to the opposite value.
+The Visual Feedback (This is the challenge):
+If isFollowing is false: The button background should be blue, and the text should say "Follow".
+If isFollowing is true: The button background should be gray (#ccc), and the text should say "Following".
+Hint: You can use inline styles or ternary operators inside the style prop to achieve this! (e.g., backgroundColor: isFollowing ? '#ccc' : 'blue').
+Bonus Challenge (If you have extra time):
+Add a <Text> above the button that displays a follower count. Start it at 100. If isFollowing is true, display 101. If false, display 100.
+
+Take your time with this. When you come back, drop your code here and I'll review it and give you feedback! Good luck!
+
+
+
