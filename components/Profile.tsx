@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, Pressable, View } from 'react-native';
 
 export default function Profile() {
-  const [isFollwing, setIsFollwing] = useState(false);
+  const [isFollowing, setIsFollowing] = useState(false);
+
   return (
     <View style={styles.container}>
       <View style={styles.card}>
@@ -10,35 +11,24 @@ export default function Profile() {
         <Text style={styles.description}>
           React Native Developer in training
         </Text>
-        <TouchableOpacity
-          activeOpacity={1}
-          onPress={() => setIsFollwing(prev => !prev)}
-          style={
-            !isFollwing
-              ? { marginTop: 5, backgroundColor: '#1877F2', borderRadius: 8 }
-              : { marginTop: 5, backgroundColor: '#ccd1d8', borderRadius: 8 }
-          }
+
+        <Pressable
+          onPress={() => setIsFollowing(prev => !prev)}
+          style={({ pressed }) => [
+            styles.buttonBase,
+            isFollowing ? styles.buttonFollowing : styles.buttonFollow,
+            pressed && styles.buttonPressed,
+          ]}
         >
           <Text
-            style={
-              !isFollwing
-                ? {
-                    padding: 10,
-                    fontWeight: 'bold',
-                    color: 'white',
-                    textAlign: 'center',
-                  }
-                : {
-                    padding: 10,
-                    fontWeight: 'bold',
-                    color: 'black',
-                    textAlign: 'center',
-                  }
-            }
+            style={[
+              styles.textBase,
+              isFollowing ? styles.textFollowing : styles.textFollow,
+            ]}
           >
-            {!isFollwing ? 'Follow' : 'Following'}
+            {isFollowing ? 'Following' : 'Follow'}
           </Text>
-        </TouchableOpacity>
+        </Pressable>
       </View>
     </View>
   );
@@ -63,6 +53,32 @@ const styles = StyleSheet.create({
   },
   description: {
     color: '#9b9898',
+    marginBottom: 15,
   },
-  buttonText: {},
+  buttonBase: {
+    marginTop: 5,
+    borderRadius: 8,
+  },
+  buttonFollow: {
+    backgroundColor: '#1877F2',
+  },
+  buttonFollowing: {
+    backgroundColor: '#ccd1d8',
+  },
+
+  buttonPressed: {
+    opacity: 0.7,
+    transform: [{ scale: 0.98 }],
+  },
+  textBase: {
+    padding: 10,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  textFollow: {
+    color: 'white',
+  },
+  textFollowing: {
+    color: 'black',
+  },
 });

@@ -1,13 +1,15 @@
 // import React from "react";
 // import { View, Text, StyleSheet } from "react-native";
 
-import Profile from './components/Profile';
+// import Profile from './components/Profile';
+import Toggle from './components/Toggle';
 
 // import Button from "./components/Button";
 
 export default function App() {
   return (
-    <Profile />
+    // <Profile />
+    <Toggle />
 
     // <Button/>
     // <View style={styles.screenContainer}>
