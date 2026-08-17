@@ -2,15 +2,29 @@
 // import { View, Text, StyleSheet } from "react-native";
 
 // import Profile from './components/Profile';
+
+import Checklist from './components/Checklist';
+import FlatMap from './components/FlatList';
+import KeyboardExp from './components/KeyboardExp';
+import LocalStorage from './components/LocalStorage';
+import Notes from './components/Notes';
+import PlatformExample from './components/PlatformExample';
 import Toggle from './components/Toggle';
+import TwoScreen from './components/TwoScreen';
 
 // import Button from "./components/Button";
 
 export default function App() {
   return (
     // <Profile />
-    <Toggle />
-
+    // <Toggle />
+    // <Notes />
+    // <Checklist />
+    // <FlatMap />
+    // <PlatformExample />
+    // <TwoScreen />
+    // <KeyboardExp />
+    <LocalStorage />
     // <Button/>
     // <View style={styles.screenContainer}>
     //   {/* PARENT VIEW: Defaults to flexDirection: 'column' (top to bottom) */}
